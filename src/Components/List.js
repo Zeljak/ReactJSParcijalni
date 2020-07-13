@@ -6,6 +6,11 @@ export default function List ({ data, repo}){
         return "Sorry, but there were no results";
     }
 
+if (data.message || repo.message){
+    return "Sorry, but there were no results";
+}
+
+
 
 
 return(
