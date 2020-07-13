@@ -1,4 +1,5 @@
 import React from 'react';
+import propTypes from "prop-types";
 
 export default function List ({ data, repo}){
     if (!data || data.length === 0){
@@ -24,3 +25,7 @@ return(
 );
 
 }
+
+List.propTypes = {
+    data: propTypes.object
+};

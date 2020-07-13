@@ -1,5 +1,6 @@
 import React from 'react';
 import {apiURL} from "../Common";
+import PropTypes from "prop-types";
 
 export default class Search extends React.Component {
     constructor(props){
@@ -50,4 +51,8 @@ export default class Search extends React.Component {
         )
     }
 
+}
+Search.propTypes = {
+    onResult: PropTypes.func,
+    onSearchStart: PropTypes.func
 }
