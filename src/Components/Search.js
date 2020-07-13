@@ -15,6 +15,8 @@ export default class Search extends React.Component {
         if(!this.state.query || this.state.query.length === 0){
             return;
         }
+
+        this.props.onSearchStart();
     
         Promise.all([
             fetch(apiURL + this.state.query)
@@ -29,10 +31,18 @@ export default class Search extends React.Component {
           });
    
 }
-
+ handleQueryChange = (e) => {
+     this.setState({ query: e.target.value})
+ }
     render(){
         return(
-            <form>
+            <form onSubmit={this.handleSearch}>
+            <input required placeholder="Start your GitHub search..." 
+            type="text"
+            value={this.state.query}
+            onChange = {this.handleQueryChange}></input>
+            <input type="submit" value="GO!"></input>
+
 
             </form>
 
